@@ -16,7 +16,13 @@
       <ul class="list-group mb-3">
         <% @list.bookmarks.each do |bookmark| %>
           <li class="list-group-item">
-            <%= bookmark.comment %>
+            <div class="d-flex justify-content-between">
+              <%= bookmark.comment %>
+              <%= link_to "Delete",
+              bookmark_path(bookmark),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+            </div>
           </li>
         <% end %>
       </ul>
