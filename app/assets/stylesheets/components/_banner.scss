@@ -1,5 +1,7 @@
 .home-banner {
-  background-image: url('https://images.unsplash.com/photo-1610890690846-5149750c8634');
+  // background-image: url('https://images.unsplash.com/photo-1610890690846-5149750c8634');
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1610890690846-5149750c8634);
+
   background-size: cover;
   background-position: center;
   height: 100vh;
