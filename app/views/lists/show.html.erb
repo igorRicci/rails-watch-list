@@ -1,32 +1,23 @@
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('camera.jpg') %>); height: 50vh;">
+  <h3><%= @list.name %></h3>
+  <p class="show-count-movies"> <%= @list.movies.count %> </p>
+</div>
 <div class="container mt-3">
+  <h2>Movies</h2>
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Lista: <%= @list.name %></h1>
-      <hr>
-      <h2>Movies</h2>
-      <ul class="list-group mb-3">
-        <% @list.movies.each do |movie| %>
-          <li class="list-group-item">
-            <%= movie.title %>
-          </li>
-        <% end %>
-      </ul>
-      <hr>
-      <h2>Bookmarks</h2>
-      <ul class="list-group mb-3">
-        <% @list.bookmarks.each do |bookmark| %>
-          <li class="list-group-item">
-            <div class="d-flex justify-content-between">
-              <%= bookmark.movie.title %>:
-              <%= bookmark.comment %>
-              <%= link_to "Delete",
-              bookmark_path(bookmark),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+    <div>
+      <% @list.movies.each do |movie| %>
+        <div class="col-4">
+          <div class="movie-image">
+            <%= image_tag movie.poster_url, class: "movie-card-image" %>
+          </div>
+          <div class="movie-info">
+            <h3><%= movie.title %></h3>
+            <p><%= movie.overview %></p>
+          </div>
+        </div>
+      <% end %>
+
       <hr>
       <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
       <%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
