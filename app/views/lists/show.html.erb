@@ -2,23 +2,21 @@
   <h3><%= @list.name %></h3>
   <p class="show-count-movies"> <%= @list.movies.count %> </p>
 </div>
-<div class="container mt-3">
-  <h2>Movies</h2>
-  <div class="row">
-      <% @list.movies.each do |movie| %>
-        <div class="col-4 movie-card">
-          <div class="movie-image">
-            <%= image_tag movie.poster_url, class: "movie-card-image" %>
-          </div>
-          <div class="movie-info">
-            <h3><%= movie.title %></h3>
-            <p><%= movie.overview %></p>
-          </div>
+<div class="container mt-3 pb-3">
+  <div class="row justify-content-center">
+    <% @list.movies.each do |movie| %>
+      <div class="col-4 movie-card">
+        <div class="movie-image">
+          <%= image_tag movie.poster_url, class: "movie-card-image" %>
         </div>
-      <% end %>
-
-      <hr>
+        <div class="movie-info">
+          <h3><%= movie.title %></h3>
+          <p><%= movie.overview %></p>
+        </div>
+      </div>
+    <% end %>
+    <hr>
   </div>
+  <%= link_to 'Add movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+  <%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
 </div>
-<%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
-<%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
