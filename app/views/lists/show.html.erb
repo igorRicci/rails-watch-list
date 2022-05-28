@@ -1,6 +1,6 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('camera.jpg') %>); height: 50vh;">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('camera.jpg') %>);">
   <h3><%= @list.name %></h3>
-  <p class="show-count-movies"> <%= @list.movies.count %> </p>
+  <p class="show-movies-count"> <%= @list.movies.count %> </p>
 </div>
 <div class="container mt-3 pb-3">
   <div class="row justify-content-center">
