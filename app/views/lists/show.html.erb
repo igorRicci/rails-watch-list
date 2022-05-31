@@ -5,7 +5,7 @@
 <div class="container mt-3 pb-3">
   <div class="row justify-content-center">
     <% @list.movies.each do |movie| %>
-      <div class="col-4 movie-card">
+      <div class="col-10 col-6-md col-lg-4 movie-card">
         <div class="movie-image">
           <%= image_tag movie.poster_url, class: "movie-card-image" %>
         </div>
