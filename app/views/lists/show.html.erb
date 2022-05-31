@@ -1,4 +1,4 @@
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('camera.jpg') %>);">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_tag(@list.photo.key) : asset_path('camera.jpg') %>);">
   <h3><%= @list.name %></h3>
   <p class="show-movies-count"> <%= @list.movies.count %> </p>
 </div>
