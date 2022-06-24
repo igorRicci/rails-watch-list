@@ -1,4 +1,4 @@
-# Watchlist
+<h1 align="center">Watchlist</h1>
 
 Watchlist is a app developed with Ruby on Rails where you can create lists with your favorites, adding a cool picture to make it really yours
 
