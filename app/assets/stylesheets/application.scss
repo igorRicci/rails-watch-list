@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  height: 100vh;
+}
+
 h2 {
   font-size: 18px;
 }
